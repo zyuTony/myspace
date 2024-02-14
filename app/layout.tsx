@@ -1,3 +1,4 @@
+import AuthProvider from "./AuthProvider";
 import NavMenu from "./NavMenu";
 
 export const metadata = {
@@ -11,11 +12,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body>
-        <NavMenu />
-        {children}
-      </body>
-    </html>
+    <AuthProvider>
+      {" "}
+      <html lang="en">
+        <body>
+          <NavMenu />
+          {children}
+        </body>
+      </html>
+    </AuthProvider>
   );
 }
